@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Advanced FIPE</string>
+    <string name="advanced_fipe">Advanced FIPE</string>
+    <string name="consulta_de_carros">Consulta de carros e utilitários pequenos</string>
+    <string name="consulta_de_motos">Consulta de motos</string>
+    <string name="consulta_de_caminhoes">Consulta de caminhões e micro ônibus</string>
 </resources>
