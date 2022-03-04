@@ -4,9 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/bottom_item_background_color.xml" value="0.1390625" />
+        <entry key="..\:/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/ic_arrow_back.xml" value="0.25" />
         <entry key="..\:/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_search_options_screen.xml" value="0.25" />
+        <entry key="..\:/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_result_screen.xml" value="0.33" />
+        <entry key="..\:/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_search_options_screen.xml" value="0.1" />
         <entry key="..\:/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.22395833333333334" />
+        <entry key="..\:/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/menu/top_app_bar.xml" value="0.25" />
       </map>
     </option>
   </component>
