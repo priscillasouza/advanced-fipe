@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBarResult"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
         android:layout_width="match_parent"
         android:layout_height="148dp"
-        app:title="@string/resultado_da_pesquisa"
-        app:navigationIcon="@drawable/ic_arrow_back"
-        app:menu="@menu/top_app_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        style="@style/Widget.MaterialComponents.Toolbar.Primary"/>
+        app:menu="@menu/top_app_bar"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/resultado_da_pesquisa" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -23,8 +23,10 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/graphicButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topAppBarResult">
+        app:layout_constraintTop_toBottomOf="@+id/topAppBarResult"
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -32,101 +34,166 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textViewReferences"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="32dp"
-                android:text="@string/mes_referencia"
-                android:background="@color/background_card"
                 style="@style/TextViewResult"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="137dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="64dp"
+                android:text="@string/mes_referencia"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textViewCodeFipe"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
+                style="@style/TextViewResult"
+                android:layout_width="136dp"
+                android:layout_height="47dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/codigo_fipe"
-                android:background="@color/background_card"
-                style="@style/TextViewResult"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewReferences" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewReferences" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textViewBrand"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
+                style="@style/TextViewResult"
+                android:layout_width="70dp"
+                android:layout_height="43dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/marca"
-                android:background="@color/background_card"
-                style="@style/TextViewResult"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewCodeFipe" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textViewModel"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/modelo"
-                android:background="@color/background_card"
                 style="@style/TextViewResult"
+                android:layout_width="80dp"
+                android:layout_height="47dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/modelo"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewBrand" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textViewModelYear"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
+                style="@style/TextViewResult"
+                android:layout_width="117dp"
+                android:layout_height="44dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/ano_modelo"
-                android:background="@color/background_card"
-                style="@style/TextViewResult"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewModel" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textViewConsultationDate"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
+                style="@style/TextViewResult"
+                android:layout_width="149dp"
+                android:layout_height="42dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/data_da_consulta"
-                android:background="@color/background_card"
-                style="@style/TextViewResult"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewModelYear" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textViewPrice"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
+                style="@style/TextViewResult"
+                android:layout_width="120dp"
+                android:layout_height="47dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/preco_medio"
-                android:background="@color/background_card"
-                style="@style/TextViewResult"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewConsultationDate" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewResultMonthReferences"
+                android:layout_width="0dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewReferences"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="Resultado referência" />
+
+            <TextView
+                android:id="@+id/textViewResultCodeFipe"
+                android:layout_width="0dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewCodeFipe"
+                app:layout_constraintTop_toBottomOf="@+id/textViewResultMonthReferences"
+                app:title="Resultado código fipe" />
+
+            <TextView
+                android:id="@+id/textViewResultBrand"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textViewBrand"
+                app:layout_constraintTop_toBottomOf="@+id/textViewResultCodeFipe"
+                app:title="Resultado marca" />
+
+            <TextView
+                android:id="@+id/textViewResultModel"
+                android:layout_width="0dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textViewModel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewResultBrand"
+                app:title="Resultado modelo" />
+
+            <TextView
+                android:id="@+id/textViewResultModelYear"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.195"
+                app:layout_constraintStart_toEndOf="@+id/textViewModelYear"
+                app:layout_constraintTop_toBottomOf="@+id/textViewResultModel"
+                app:title="Resultado Ano modelo" />
+
+            <TextView
+                android:id="@+id/textViewResultDateConsult"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.075"
+                app:layout_constraintStart_toEndOf="@+id/textViewConsultationDate"
+                app:layout_constraintTop_toBottomOf="@+id/textViewResultModelYear"
+                app:title="Resultado data consulta" />
+
+            <TextView
+                android:id="@+id/textViewResultPrice"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textViewPrice"
+                app:layout_constraintTop_toBottomOf="@+id/textViewResultDateConsult"
+                app:title="Resultado preço" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -135,14 +202,15 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/graphicButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="43dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="32dp"
+        android:text="@string/grafico_evolutivo_de_precos"
         app:cornerRadius="32dp"
-        android:text="@string/grafico_evolutivo_de_precos" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
