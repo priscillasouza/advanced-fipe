@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/ic_favorite.xml" value="0.136" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/ic_favorite_disable.xml" value="0.1395" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/ic_favorite_enable.xml" value="0.1395" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/activity_main.xml" value="0.18" />
-        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_result_screen.xml" value="0.1" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_result_screen.xml" value="0.25" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_search_options_screen.xml" value="0.16" />
         <entry key="..\:/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/bottom_item_background_color.xml" value="0.1390625" />
         <entry key="..\:/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/ic_arrow_back.xml" value="0.25" />

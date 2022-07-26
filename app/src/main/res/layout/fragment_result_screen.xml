@@ -1,216 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/topAppBarResult"
-        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="148dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/top_app_bar"
-        app:navigationIcon="@drawable/ic_arrow_back"
-        app:title="@string/resultado_da_pesquisa" />
+        android:layout_height="wrap_content">
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nestedScrollView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/graphicButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topAppBarResult"
-        app:layout_constraintVertical_bias="1.0">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarResult"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="120dp"
+            android:background="@color/primary_color"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textViewReferences"
-                style="@style/TextViewResult"
-                android:layout_width="137dp"
-                android:layout_height="43dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="64dp"
-                android:text="@string/mes_referencia"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolBarResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:navigationIconTint="@color/white"
+                app:title="@string/resultado_da_pesquisa"
+                app:titleCentered="true"
+                app:titleTextColor="@color/white" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textViewCodeFipe"
-                style="@style/TextViewResult"
-                android:layout_width="136dp"
-                android:layout_height="47dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/codigo_fipe"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewReferences" />
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkboxFavorite"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="16dp"
+            android:button="@drawable/selector_favorite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appBarResult" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textViewBrand"
-                style="@style/TextViewResult"
-                android:layout_width="70dp"
-                android:layout_height="43dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/marca"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewCodeFipe" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewReferences"
+            style="@style/TextViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/mes_referencia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/checkboxFavorite" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textViewModel"
-                style="@style/TextViewResult"
-                android:layout_width="80dp"
-                android:layout_height="47dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/modelo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewBrand" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCodeFipe"
+            style="@style/TextViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/codigo_fipe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewReferences" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textViewModelYear"
-                style="@style/TextViewResult"
-                android:layout_width="117dp"
-                android:layout_height="44dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/ano_modelo"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewModel" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewBrand"
+            style="@style/TextViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/marca"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewCodeFipe" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textViewConsultationDate"
-                style="@style/TextViewResult"
-                android:layout_width="149dp"
-                android:layout_height="42dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/data_da_consulta"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewModelYear" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewModel"
+            style="@style/TextViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/modelo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewBrand" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textViewPrice"
-                style="@style/TextViewResult"
-                android:layout_width="120dp"
-                android:layout_height="47dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/preco_medio"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewConsultationDate" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewModelYear"
+            style="@style/TextViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/ano_modelo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewModel" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textViewResultMonthReferences"
-                android:layout_width="0dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="64dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textViewReferences"
-                app:layout_constraintTop_toTopOf="parent"
-                app:title="Resultado referência" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewConsultationDate"
+            style="@style/TextViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/data_da_consulta"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewModelYear" />
 
-            <TextView
-                android:id="@+id/textViewResultCodeFipe"
-                android:layout_width="0dp"
-                android:layout_height="47dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textViewCodeFipe"
-                app:layout_constraintTop_toBottomOf="@+id/textViewResultMonthReferences"
-                app:title="Resultado código fipe" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPrice"
+            style="@style/TextViewResult"
+            android:layout_width="120dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/preco_medio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewConsultationDate" />
 
-            <TextView
-                android:id="@+id/textViewResultBrand"
-                android:layout_width="0dp"
-                android:layout_height="43dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/textViewBrand"
-                app:layout_constraintTop_toBottomOf="@+id/textViewResultCodeFipe"
-                app:title="Resultado marca" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewResultMonthReferences"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewReferences"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewReferences"
+            app:layout_constraintTop_toTopOf="@id/textViewReferences" />
 
-            <TextView
-                android:id="@+id/textViewResultModel"
-                android:layout_width="0dp"
-                android:layout_height="46dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/textViewModel"
-                app:layout_constraintTop_toBottomOf="@+id/textViewResultBrand"
-                app:title="Resultado modelo" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewResultCodeFipe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewCodeFipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewCodeFipe"
+            app:layout_constraintTop_toTopOf="@+id/textViewCodeFipe" />
 
-            <TextView
-                android:id="@+id/textViewResultModelYear"
-                android:layout_width="0dp"
-                android:layout_height="43dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.195"
-                app:layout_constraintStart_toEndOf="@+id/textViewModelYear"
-                app:layout_constraintTop_toBottomOf="@+id/textViewResultModel"
-                app:title="Resultado Ano modelo" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewResultBrand"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewBrand"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewBrand"
+            app:layout_constraintTop_toTopOf="@+id/textViewBrand" />
 
-            <TextView
-                android:id="@+id/textViewResultDateConsult"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.075"
-                app:layout_constraintStart_toEndOf="@+id/textViewConsultationDate"
-                app:layout_constraintTop_toBottomOf="@+id/textViewResultModelYear"
-                app:title="Resultado data consulta" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewResultModel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewModel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewModel"
+            app:layout_constraintTop_toTopOf="@+id/textViewModel" />
 
-            <TextView
-                android:id="@+id/textViewResultPrice"
-                android:layout_width="0dp"
-                android:layout_height="43dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="32dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/textViewPrice"
-                app:layout_constraintTop_toBottomOf="@+id/textViewResultDateConsult"
-                app:title="Resultado preço" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewResultModelYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewModelYear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewModelYear"
+            app:layout_constraintTop_toTopOf="@+id/textViewModelYear" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewResultDateConsult"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewConsultationDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewConsultationDate"
+            app:layout_constraintTop_toTopOf="@+id/textViewConsultationDate" />
 
-    </androidx.core.widget.NestedScrollView>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewResultPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewPrice"
+            app:layout_constraintTop_toTopOf="@+id/textViewPrice" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/graphicButton"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="32dp"
-        android:text="@string/grafico_evolutivo_de_precos"
-        app:cornerRadius="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/graphicButton"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/grafico_evolutivo_de_precos"
+            app:cornerRadius="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPrice"
+            app:layout_constraintVertical_bias="0.948" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
