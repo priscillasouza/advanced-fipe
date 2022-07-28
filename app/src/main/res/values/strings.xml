@@ -13,4 +13,5 @@
     <string name="preco_medio">Preço médio:</string>
     <string name="grafico_evolutivo_de_precos">Gráfico evolutivo de preços</string>
     <string name="resultado_da_pesquisa">Resultado da pesquisa</string>
+    <string name="text_button_result">Resultado</string>
 </resources>
