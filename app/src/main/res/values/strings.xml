@@ -4,4 +4,5 @@
     <string name="consulta_de_carros">Consulta de carros e utilitários pequenos</string>
     <string name="consulta_de_motos">Consulta de motos</string>
     <string name="consulta_de_caminhoes">Consulta de caminhões e micro ônibus</string>
+    <string name="text_favorites">Favoritos</string>
 </resources>
