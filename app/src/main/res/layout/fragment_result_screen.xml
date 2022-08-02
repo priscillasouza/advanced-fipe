@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_result"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_bar_height"
+            android:background="@color/primary_color"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/tool_bar_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:navigationIconTint="@color/white"
+                app:title="@string/resultado_da_pesquisa"
+                app:titleCentered="true"
+                app:titleTextColor="@color/white" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/check_box_favorite"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="16dp"
+            android:button="@drawable/selector_favorite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_bar_result" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_references"
+            style="@style/TextViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/mes_referencia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/check_box_favorite" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_code_fipe"
+            style="@style/TextViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/codigo_fipe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_references" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_brand"
+            style="@style/TextViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/marca"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_code_fipe" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_model"
+            style="@style/TextViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/modelo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_brand" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_model_year"
+            style="@style/TextViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/ano_modelo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_model" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_consultation_date"
+            style="@style/TextViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/data_da_consulta"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_model_year" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_price"
+            style="@style/TextViewResult"
+            android:layout_width="120dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/preco_medio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_consultation_date" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_month_references"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_references"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_references"
+            app:layout_constraintTop_toTopOf="@id/text_view_references" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_code_fipe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_code_fipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_code_fipe"
+            app:layout_constraintTop_toTopOf="@+id/text_view_code_fipe" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_brand"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_brand"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_brand"
+            app:layout_constraintTop_toTopOf="@+id/text_view_brand" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_model"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_model"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_model"
+            app:layout_constraintTop_toTopOf="@+id/text_view_model" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_model_year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_model_year"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_model_year"
+            app:layout_constraintTop_toTopOf="@+id/text_view_model_year" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_date_consult"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_consultation_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_consultation_date"
+            app:layout_constraintTop_toTopOf="@+id/text_view_consultation_date" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_price"
+            app:layout_constraintTop_toTopOf="@+id/text_view_price" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_graphic"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/grafico_evolutivo_de_precos"
+            app:cornerRadius="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_price"
+            app:layout_constraintVertical_bias="0.948" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

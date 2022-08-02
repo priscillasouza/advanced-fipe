@@ -4,4 +4,14 @@
     <string name="consulta_de_carros">Consulta de carros e utilitários pequenos</string>
     <string name="consulta_de_motos">Consulta de motos</string>
     <string name="consulta_de_caminhoes">Consulta de caminhões e micro ônibus</string>
+    <string name="mes_referencia">Mês referência:</string>
+    <string name="codigo_fipe">Código Fipe:</string>
+    <string name="marca">Marca:</string>
+    <string name="modelo">Modelo:</string>
+    <string name="ano_modelo">Ano modelo:</string>
+    <string name="data_da_consulta">Data da consulta:</string>
+    <string name="preco_medio">Preço médio:</string>
+    <string name="grafico_evolutivo_de_precos">Gráfico evolutivo de preços</string>
+    <string name="resultado_da_pesquisa">Resultado da pesquisa</string>
+    <string name="text_button_result">Resultado</string>
 </resources>
