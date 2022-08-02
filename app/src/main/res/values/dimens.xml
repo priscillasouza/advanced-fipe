@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="app_bar_height">120dp</dimen>
+    <dimen name="image_card_item_height">100dp</dimen>
+    <dimen name="image_card_item_width">150dp</dimen>
 </resources>
