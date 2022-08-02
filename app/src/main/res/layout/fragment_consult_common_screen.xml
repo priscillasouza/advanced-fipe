@@ -96,7 +96,6 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="64dp"
             android:text="@string/text_button_search_common"
-            android:textAllCaps="false"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
