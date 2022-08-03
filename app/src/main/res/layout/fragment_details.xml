@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_details"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_bar_height"
+            android:background="@color/primary_color"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/tool_bar_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:navigationIconTint="@color/white"
+                app:title="@string/text_app_bar_details"
+                app:titleCentered="true"
+                app:titleTextColor="@color/white" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_references_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/text_references_month_details"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_bar_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_code_fipe_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/text_code_fipe_details"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_references_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_brand_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/text_brand_details"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_code_fipe_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_model_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/text_model_details"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_brand_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_model_year_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/text_model_year_details"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_model_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_consultation_date_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/text_consult_date_details"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_model_year_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_price_details"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/text_price_details"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_consultation_date_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_month_references_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_references_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_references_details"
+            app:layout_constraintTop_toTopOf="@id/text_view_references_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_code_fipe_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_code_fipe_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_code_fipe_details"
+            app:layout_constraintTop_toTopOf="@+id/text_view_code_fipe_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_brand_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_brand_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_brand_details"
+            app:layout_constraintTop_toTopOf="@+id/text_view_brand_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_model_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_model_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_model_details"
+            app:layout_constraintTop_toTopOf="@+id/text_view_model_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_model_year_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_model_year_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_model_year_details"
+            app:layout_constraintTop_toTopOf="@+id/text_view_model_year_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_date_consult"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_consultation_date_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_consultation_date_details"
+            app:layout_constraintTop_toTopOf="@+id/text_view_consultation_date_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_result_price_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_price_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_price_details"
+            app:layout_constraintTop_toTopOf="@+id/text_view_price_details" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_graphic_details"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/text_graphic_details"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:cornerRadius="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_price_details"
+            app:layout_constraintVertical_bias="0.948" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
