@@ -4,6 +4,7 @@
     <string name="consulta_de_carros">Consulta de carros e utilitários pequenos</string>
     <string name="consulta_de_motos">Consulta de motos</string>
     <string name="consulta_de_caminhoes">Consulta de caminhões e micro ônibus</string>
+    <string name="text_favorites">Favoritos</string>
     <string name="text_brand">Marca</string>
     <string name="text_model">Modelo</string>
     <string name="text_model_year">Ano modelo</string>
@@ -38,4 +39,6 @@
     <string name="text_button_onboarding_next">Próximo</string>
     <string name="text_subtitle_onboarding">Você conseguirá visualizar o resultado com o preço médio do veículo consultado</string>
     <string name="text_title_onboarding">Pesquise o preço médio do veículo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
