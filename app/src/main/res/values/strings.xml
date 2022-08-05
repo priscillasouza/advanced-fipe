@@ -36,6 +36,9 @@
     <string name="grafico_evolutivo_de_precos">Gráfico evolutivo de preços</string>
     <string name="resultado_da_pesquisa">Resultado da pesquisa</string>
     <string name="text_button_result">Resultado</string>
+    <string name="text_button_onboarding_next">Próximo</string>
+    <string name="text_subtitle_onboarding">Você conseguirá visualizar o resultado com o preço médio do veículo consultado</string>
+    <string name="text_title_onboarding">Pesquise o preço médio do veículo</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
