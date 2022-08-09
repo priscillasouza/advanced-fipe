@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -11,13 +12,28 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image_view_onboarding"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_marginTop="64dp"
+            android:layout_width="@dimen/image_onboarding_width"
+            android:layout_height="@dimen/image_onboarding_heigth"
+            android:layout_marginTop="120dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/img_onboarding" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_name_app"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="@string/text_name_app_onboarding"
+            android:textColor="@color/primary_color"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_onboarding" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_view_title_onboarding"
@@ -26,13 +42,13 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="64dp"
             android:gravity="center"
-            android:text="@string/text_title_onboarding"
+            android:text="@string/text_title_onboarding_price"
             android:textColor="@color/gray"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_view_onboarding" />
+            app:layout_constraintTop_toBottomOf="@+id/text_view_name_app" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_view_subtitle_onboarding"
@@ -40,10 +56,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:gravity="center"
-            android:text="@string/text_subtitle_onboarding"
+            android:text="@string/text_subtitle_onboarding_price"
             android:textColor="@color/gray"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@id/text_view_title_onboarding"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/text_view_title_onboarding"
             app:layout_constraintTop_toBottomOf="@id/text_view_title_onboarding" />
 
@@ -80,19 +97,39 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:src="@drawable/ic_circle_onboarding_off" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_view_fourth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/ic_circle_onboarding_off" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_onboarding_next"
             style="@style/StyleButton"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/text_button_onboarding_next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_onboarding_back" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_onboarding_back"
+            style="@style/StyleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/text_button_onboarding_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_onboarding_next"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
