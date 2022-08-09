@@ -13,6 +13,11 @@ import com.advancedfipe.databinding.FragmentOnboardingBinding
 
 class OnboardingFragment : Fragment() {
 
+    private val PAGE_PRICE = 1
+    private val PAGE_FAVORITES = 2
+    private val PAGE_GRAPHIC = 3
+    private val PAGE_SHARE = 4
+
     private var _binding: FragmentOnboardingBinding? = null
     private val binding: FragmentOnboardingBinding get() = _binding!!
 
@@ -84,22 +89,22 @@ class OnboardingFragment : Fragment() {
             }
             imageViewFirst.setImageDrawable(
                 ContextCompat.getDrawable(
-                    requireContext(), getImageIndicator(page == 1)
+                    requireContext(), getImageIndicator(page == PAGE_PRICE)
                 )
             )
             imageViewSecond.setImageDrawable(
                 ContextCompat.getDrawable(
-                    requireContext(), getImageIndicator(page == 2)
+                    requireContext(), getImageIndicator(page == PAGE_FAVORITES)
                 )
             )
             imageViewThird.setImageDrawable(
                 ContextCompat.getDrawable(
-                    requireContext(), getImageIndicator(page == 3)
+                    requireContext(), getImageIndicator(page == PAGE_GRAPHIC)
                 )
             )
             imageViewFourth.setImageDrawable(
                 ContextCompat.getDrawable(
-                    requireContext(), getImageIndicator(page == 4)
+                    requireContext(), getImageIndicator(page == PAGE_SHARE)
                 )
             )
         }
