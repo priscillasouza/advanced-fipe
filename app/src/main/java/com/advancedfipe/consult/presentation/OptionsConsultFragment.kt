@@ -1,4 +1,4 @@
-package com.advancedfipe.presentation.fragments
+package com.advancedfipe.consult.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater

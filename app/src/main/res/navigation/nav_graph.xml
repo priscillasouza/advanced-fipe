@@ -12,23 +12,19 @@
         tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/onboardingFragment"
-        android:name="com.advancedfipe.presentation.fragments.OnboardingFragment"
+        android:name="com.advancedfipe.onboarding.presentation.OnboardingFragment"
         android:label="fragment_init_onboarding"
         tools:layout="@layout/fragment_onboarding">
         <action
             android:id="@+id/action_initOnboarding_self"
             app:destination="@id/onboardingFragment"
             app:enterAnim="@anim/nav_default_enter_anim" />
-        <argument
-            android:name="pages"
-            app:argType="integer"
-            android:defaultValue="1"/>
         <action
             android:id="@+id/action_onboardingFragment_to_optionsConsultFragment"
             app:destination="@id/optionsConsultFragment" />
     </fragment>
     <fragment
         android:id="@+id/optionsConsultFragment"
-        android:name="com.advancedfipe.presentation.fragments.OptionsConsultFragment"
+        android:name="com.advancedfipe.consult.presentation.OptionsConsultFragment"
         android:label="optionsConsultFragment" />
 </navigation>

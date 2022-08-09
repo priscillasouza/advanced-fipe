@@ -1,7 +1,6 @@
-package com.advancedfipe.presentation.fragments
+package com.advancedfipe.onboarding.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.advancedfipe.R
 import com.advancedfipe.databinding.FragmentOnboardingBinding
 
@@ -18,35 +16,21 @@ class OnboardingFragment : Fragment() {
     private var _binding: FragmentOnboardingBinding? = null
     private val binding: FragmentOnboardingBinding get() = _binding!!
 
-    private var page: Int = 0
-    private val args: OnboardingFragmentArgs by navArgs()
+    private lateinit var onboardingViewModel: OnboardingViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View = FragmentOnboardingBinding.inflate(inflater, container, false).apply {
         _binding = this
+        onboardingViewModel = OnboardingViewModel()
     }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setNextButtonClick()
-        initPage()
-    }
-
-    private fun initPage() {
-        page = args.pages
-        binding.apply {
-            imageViewOnboarding.setImageDrawable(
-                ContextCompat.getDrawable(
-                    requireContext(), getImageOnboarding(page)
-                )
-            )
-            textViewTitleOnboarding.text = getText(getTitle(page))
-            textViewSubtitleOnboarding.text =
-                getText(getSubtitle(page))
-            getIndicator(page)
-        }
+        setBackButtonClick()
+        observerViewModel()
     }
 
     private fun getImageOnboarding(page: Int): Int {
@@ -76,6 +60,20 @@ class OnboardingFragment : Fragment() {
             3 -> R.string.text_subtitle_onboarding_graphic
             4 -> R.string.text_subtitle_onboarding_share
             else -> 0
+        }
+    }
+
+    private fun initPage(page: Int) {
+        binding.apply {
+            imageViewOnboarding.setImageDrawable(
+                ContextCompat.getDrawable(
+                    requireContext(), getImageOnboarding(page)
+                )
+            )
+            textViewTitleOnboarding.text = getText(getTitle(page))
+            textViewSubtitleOnboarding.text =
+                getText(getSubtitle(page))
+            getIndicator(page)
         }
     }
 
@@ -109,16 +107,26 @@ class OnboardingFragment : Fragment() {
 
     private fun setNextButtonClick() {
         binding.buttonOnboardingNext.setOnClickListener {
-            ++page
-            nextPage(
-                if(page < 5) {
-                    OnboardingFragmentDirections.actionInitOnboardingSelf(
-                        page
-                    )
-                }else {
-                    OnboardingFragmentDirections.actionOnboardingFragmentToOptionsConsultFragment()
+            onboardingViewModel.next()
+        }
+    }
+
+    private fun setBackButtonClick() {
+        binding.buttonOnboardingBack.setOnClickListener {
+            onboardingViewModel.back()
+        }
+    }
+
+    private fun observerViewModel() {
+        onboardingViewModel.navigate.observe(viewLifecycleOwner) {
+            when (it) {
+                is OnboardingState.NavigateSuccess -> {
+                    initPage(it.page)
                 }
-            )
+                is OnboardingState.EndOnboarding -> {
+                    nextPage(OnboardingFragmentDirections.actionOnboardingFragmentToOptionsConsultFragment())
+                }
+            }
         }
     }
 
