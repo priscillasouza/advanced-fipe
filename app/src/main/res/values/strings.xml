@@ -37,8 +37,16 @@
     <string name="resultado_da_pesquisa">Resultado da pesquisa</string>
     <string name="text_button_result">Resultado</string>
     <string name="text_button_onboarding_next">Próximo</string>
-    <string name="text_subtitle_onboarding">Você conseguirá visualizar o resultado com o preço médio do veículo consultado</string>
-    <string name="text_title_onboarding">Pesquise o preço médio do veículo</string>
+    <string name="text_subtitle_onboarding_price">Você conseguirá visualizar o resultado com o preço médio do veículo consultado</string>
+    <string name="text_title_onboarding_price">Pesquise o preço médio do veículo</string>
+    <string name="text_title_onboarding_favorites">Favorite as consultas desejadas</string>
+    <string name="text_subtitle_onboarding_favorites">Você poderá favoritar as consultas que deseja ver novamente</string>
+    <string name="text_title_onboarding_graphic">Gráfico evolutivo de preços</string>
+    <string name="text_subtitle_onboarding_graphic">Você poderá visualizar o gráfico evolutivo de preço do veículo por mês e ano</string>
+    <string name="text_title_onboarding_share">Compartilhe suas consultas</string>
+    <string name="text_subtitle_onboarding_share">Você poderá compartilhar as consultas realizadas</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_name_app_onboarding">ADVANCED FIPE</string>
 </resources>

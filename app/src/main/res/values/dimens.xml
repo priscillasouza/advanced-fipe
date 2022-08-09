@@ -3,4 +3,6 @@
     <dimen name="app_bar_height">120dp</dimen>
     <dimen name="image_card_item_height">100dp</dimen>
     <dimen name="image_card_item_width">150dp</dimen>
+    <dimen name="image_onboarding_width">160dp</dimen>
+    <dimen name="image_onboarding_heigth">160dp</dimen>
 </resources>
