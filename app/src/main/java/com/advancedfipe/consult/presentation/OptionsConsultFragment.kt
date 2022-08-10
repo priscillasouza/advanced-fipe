@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.advancedfipe.databinding.FragmentSearchOptionsScreenBinding
 
 class OptionsConsultFragment : Fragment() {
@@ -28,14 +30,24 @@ class OptionsConsultFragment : Fragment() {
     private fun setSearchOptionsCardsClicks() {
         binding.apply {
             cardViewCar.setOnClickListener {
-                //TODO navegar para o FragmentConsult
+                nextPage(
+                    OptionsConsultFragmentDirections.actionOptionsConsultFragmentToConsultFragment()
+                )
             }
-            cardViewMotocycle.setOnClickListener {
-                //TODO navegar para o FragmentConsult
+            cardViewMotorcycle.setOnClickListener {
+                nextPage(
+                    OptionsConsultFragmentDirections.actionOptionsConsultFragmentToConsultFragment()
+                )
             }
             cardViewTruck.setOnClickListener {
-                //TODO navegar para o FragmentConsult
+                nextPage(
+                    OptionsConsultFragmentDirections.actionOptionsConsultFragmentToConsultFragment()
+                )
             }
         }
+    }
+
+    private fun nextPage(directions: NavDirections) {
+        findNavController().navigate(directions)
     }
 }

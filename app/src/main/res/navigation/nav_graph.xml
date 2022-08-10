@@ -26,5 +26,17 @@
     <fragment
         android:id="@+id/optionsConsultFragment"
         android:name="com.advancedfipe.consult.presentation.OptionsConsultFragment"
-        android:label="optionsConsultFragment" />
+        android:label="optionsConsultFragment" >
+        <action
+            android:id="@+id/action_optionsConsultFragment_to_consultFragment"
+            app:destination="@id/consultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/consultFragment"
+        android:name="com.advancedfipe.consult.presentation.ConsultFragment"
+        android:label="ConsultFragment" >
+        <action
+            android:id="@+id/action_consultFragment_to_optionsConsultFragment"
+            app:destination="@id/optionsConsultFragment" />
+    </fragment>
 </navigation>
