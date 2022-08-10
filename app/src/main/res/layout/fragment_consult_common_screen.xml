@@ -26,8 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
-                android:padding="18dp"
-                android:paddingBottom="10dp" />
+                android:padding="18dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -46,8 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
-                android:padding="18dp"
-                android:paddingBottom="10dp" />
+                android:padding="18dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -66,8 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
-                android:padding="18dp"
-                android:paddingBottom="10dp" />
+                android:padding="18dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -86,22 +83,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
-                android:padding="18dp"
-                android:paddingBottom="10dp" />
+                android:padding="18dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_common_consult"
+            style="@style/StyleButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="64dp"
             android:text="@string/text_button_search_common"
-            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_input_layout_year"
-            app:layout_constraintVertical_bias="0.905" />
+            app:layout_constraintVertical_bias="0.939" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 

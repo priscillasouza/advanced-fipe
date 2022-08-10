@@ -50,4 +50,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_name_app_onboarding">ADVANCED FIPE</string>
     <string name="text_button_onboarding_back">Voltar</string>
+    <string name="text_title_tab_commun_view_pager">Comum</string>
+    <string name="text_title_tab_code_view_pager">Por código</string>
+    <string name="text_app_bar_consult">Consulta</string>
 </resources>
