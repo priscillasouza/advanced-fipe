@@ -15,4 +15,10 @@
         <item name="android:background">@drawable/background_button</item>
         <item name="android:layout_height">40dp</item>
     </style>
+
+    <style name="StyleCard" parent="TextAppearance.AppCompat">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:longClickable">false</item>
+    </style>
 </resources>
