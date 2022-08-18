@@ -53,4 +53,9 @@
     <string name="text_title_tab_commun_view_pager">Comum</string>
     <string name="text_title_tab_code_view_pager">Por código</string>
     <string name="text_app_bar_consult">Consulta</string>
+    <string name="text_item_bottom_navigation_consult">Consulta</string>
+    <string name="text_item_bottom_navigation_favorites">Favoritos</string>
+    <string name="text_toolbar_favorites">Favoritos</string>
+    <string name="fragment_dashboard">fragment_dashboard</string>
+    <string name="onboarding_fragment">onboarding_fragment</string>
 </resources>
