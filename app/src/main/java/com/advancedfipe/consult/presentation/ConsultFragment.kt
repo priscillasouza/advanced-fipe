@@ -7,19 +7,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.advancedfipe.R
-import com.advancedfipe.databinding.FragmentConsultScreenBinding
-import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.fragment_consult_screen.*
+import com.advancedfipe.databinding.FragmentConsultBinding
 
 class ConsultFragment : Fragment() {
 
-    private lateinit var binding: FragmentConsultScreenBinding
+    private lateinit var binding: FragmentConsultBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
-        binding = FragmentConsultScreenBinding.inflate(layoutInflater, container, false)
+        binding = FragmentConsultBinding.inflate(layoutInflater, container, false)
 
         setHasOptionsMenu(true)
         return binding.root
@@ -28,26 +26,14 @@ class ConsultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setNavigationIcon()
-        setViewPager()
     }
 
     private fun setNavigationIcon() {
-        tool_bar_consult_screen.setNavigationIcon(R.drawable.ic_arrow_back)
-        tool_bar_consult_screen.setNavigationOnClickListener {
+        binding.toolBarConsultScreen.setNavigationIcon(R.drawable.ic_arrow_back)
+        binding.toolBarConsultScreen.setNavigationOnClickListener {
             findNavController().navigate(
                 ConsultFragmentDirections.actionConsultFragmentToOptionsConsultFragment()
             )
         }
-    }
-
-    private fun setViewPager() {
-        val tabTitle = arrayOf(
-            getString(R.string.text_title_tab_commun_view_pager),
-            getString(R.string.text_title_tab_code_view_pager)
-        )
-        binding.viewPagerConsult.adapter = ViewPagerAdapter(this)
-        TabLayoutMediator(binding.tabLayoutConsult, binding.viewPagerConsult) { tab, position ->
-            tab.text = tabTitle[position]
-        }.attach()
     }
 }
