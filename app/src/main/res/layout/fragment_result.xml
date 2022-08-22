@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -13,7 +12,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar_result"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/app_bar_height"
+            android:layout_height="wrap_content"
             android:background="@color/primary_color"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -21,19 +20,20 @@
                 android:id="@+id/tool_bar_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                app:menu="@menu/app_bar_menu"
                 app:navigationIconTint="@color/white"
-                app:title="@string/resultado_da_pesquisa"
+                app:title="@string/text_toolbar_result_consult"
                 app:titleCentered="true"
                 app:titleTextColor="@color/white" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/check_box_favorite"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_margin="16dp"
-            android:button="@drawable/selector_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:button="@drawable/selector_favorite_item"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
             android:text="@string/mes_referencia"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/check_box_favorite" />
@@ -109,8 +110,8 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_view_price"
             style="@style/TextViewResult"
-            android:layout_width="120dp"
-            android:layout_height="47dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/preco_medio"
@@ -189,18 +190,16 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_graphic"
+            style="@style/StyleButton"
             android:layout_width="match_parent"
-            android:layout_height="43dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="32dp"
-            android:text="@string/grafico_evolutivo_de_precos"
-            app:cornerRadius="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/text_button_graphic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_view_price"
-            app:layout_constraintVertical_bias="0.948" />
+            app:layout_constraintVertical_bias="0.899" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

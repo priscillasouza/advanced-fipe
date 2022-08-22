@@ -8,7 +8,7 @@
     <string name="text_brand">Marca</string>
     <string name="text_model">Modelo</string>
     <string name="text_model_year">Ano modelo</string>
-    <string name="text_button_search_common">Pesquisar</string>
+    <string name="text_button_consult">Pesquisar</string>
     <string name="text_hint_reference_period_code">Período de referência</string>
     <string name="text_hint_model_year">Ano modelo</string>
     <string name="text_hint_model">Modelo</string>
@@ -33,8 +33,8 @@
     <string name="ano_modelo">Ano modelo:</string>
     <string name="data_da_consulta">Data da consulta:</string>
     <string name="preco_medio">Preço médio:</string>
-    <string name="grafico_evolutivo_de_precos">Gráfico evolutivo de preços</string>
-    <string name="resultado_da_pesquisa">Resultado da pesquisa</string>
+    <string name="text_button_graphic">Gráfico evolutivo de preços</string>
+    <string name="text_toolbar_result_consult">Resultado</string>
     <string name="text_button_result">Resultado</string>
     <string name="text_button_onboarding_next">Próximo</string>
     <string name="text_subtitle_onboarding_price">Você conseguirá visualizar o resultado com o preço médio do veículo consultado</string>
@@ -58,4 +58,5 @@
     <string name="text_toolbar_favorites">Favoritos</string>
     <string name="fragment_dashboard">fragment_dashboard</string>
     <string name="onboarding_fragment">onboarding_fragment</string>
+    <string name="text_menu_item_share">Compartilhar</string>
 </resources>
