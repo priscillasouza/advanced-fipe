@@ -7,17 +7,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.advancedfipe.R
-import com.advancedfipe.databinding.FragmentConsultBinding
+import com.advancedfipe.databinding.FragmentGraphicBinding
 
-class ConsultFragment : Fragment() {
+class GraphicFragment: Fragment() {
 
-    private lateinit var binding: FragmentConsultBinding
+    private lateinit var binding: FragmentGraphicBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        binding = FragmentConsultBinding.inflate(layoutInflater, container, false)
+        binding = FragmentGraphicBinding.inflate(layoutInflater, container, false)
 
         setHasOptionsMenu(true)
         return binding.root
@@ -26,22 +26,13 @@ class ConsultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setNavigationIcon()
-        setClickButtonConsult()
     }
 
     private fun setNavigationIcon() {
-        binding.toolBarConsultScreen.setNavigationIcon(R.drawable.ic_arrow_back)
-        binding.toolBarConsultScreen.setNavigationOnClickListener {
+        binding.toolBarGraphic.setNavigationIcon(R.drawable.ic_arrow_back)
+        binding.toolBarGraphic.setNavigationOnClickListener {
             findNavController().navigate(
-                ConsultFragmentDirections.actionConsultFragmentToOptionsConsultFragment()
-            )
-        }
-    }
-
-    private fun setClickButtonConsult() {
-        binding.buttonConsult.setOnClickListener {
-            findNavController().navigate(
-                ConsultFragmentDirections.actionConsultFragmentToResultFragment()
+                GraphicFragmentDirections.actionGraphicFragmentToResultFragment()
             )
         }
     }

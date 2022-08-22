@@ -2,41 +2,63 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
+    android:id="@+id/nav_graph_dashboard"
     app:startDestination="@id/onboardingFragment">
 
-    <activity
-        android:id="@+id/main_activity"
-        android:name="com.advancedfipe.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/optionsConsultFragment"
+        android:name="com.advancedfipe.consult.presentation.OptionsConsultFragment"
+        android:label="ConsultFragment"
+        tools:layout="@layout/fragment_options_consult">
+        <action
+            android:id="@+id/action_optionsConsultFragment_to_consultFragment"
+            app:destination="@+id/consultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.advancedfipe.favorite.presentation.FavoritesFragment"
+        android:label="FavoritesFragment"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.advancedfipe.consult.presentation.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_result">
+        <action
+            android:id="@+id/action_resultFragment_to_consultFragment"
+            app:destination="@id/consultFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_graphicFragment"
+            app:destination="@id/graphicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/consultFragment"
+        android:name="com.advancedfipe.consult.presentation.ConsultFragment"
+        android:label="ConsultFragment"
+        tools:layout="@layout/fragment_consult">
+        <action
+            android:id="@+id/action_consultFragment_to_optionsConsultFragment"
+            app:destination="@id/optionsConsultFragment" />
+        <action
+            android:id="@+id/action_consultFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
         android:name="com.advancedfipe.onboarding.presentation.OnboardingFragment"
-        android:label="fragment_init_onboarding"
+        android:label="OnboardingFragment"
         tools:layout="@layout/fragment_onboarding">
-        <action
-            android:id="@+id/action_initOnboarding_self"
-            app:destination="@id/onboardingFragment"
-            app:enterAnim="@anim/nav_default_enter_anim" />
         <action
             android:id="@+id/action_onboardingFragment_to_optionsConsultFragment"
             app:destination="@id/optionsConsultFragment" />
     </fragment>
     <fragment
-        android:id="@+id/optionsConsultFragment"
-        android:name="com.advancedfipe.consult.presentation.OptionsConsultFragment"
-        android:label="optionsConsultFragment" >
+        android:id="@+id/graphicFragment"
+        android:name="com.advancedfipe.consult.presentation.GraphicFragment"
+        android:label="GraphicFragment"
+        tools:layout="@layout/fragment_graphic">
         <action
-            android:id="@+id/action_optionsConsultFragment_to_consultFragment"
-            app:destination="@id/consultFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/consultFragment"
-        android:name="com.advancedfipe.consult.presentation.ConsultFragment"
-        android:label="ConsultFragment" >
-        <action
-            android:id="@+id/action_consultFragment_to_optionsConsultFragment"
-            app:destination="@id/optionsConsultFragment" />
+            android:id="@+id/action_graphicFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
     </fragment>
 </navigation>
