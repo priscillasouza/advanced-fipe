@@ -42,6 +42,9 @@
         <action
             android:id="@+id/action_consultFragment_to_resultFragment"
             app:destination="@id/resultFragment" />
+        <argument
+            android:name="type"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/onboardingFragment"

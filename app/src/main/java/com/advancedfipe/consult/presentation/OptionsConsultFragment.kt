@@ -5,13 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
+import com.advancedfipe.consult.presentation.ConstantsOptions.CAR
+import com.advancedfipe.consult.presentation.ConstantsOptions.MOTORCYCLE
+import com.advancedfipe.consult.presentation.ConstantsOptions.TRUCK
 import com.advancedfipe.databinding.FragmentOptionsConsultBinding
 
 class OptionsConsultFragment : Fragment() {
 
     private lateinit var binding: FragmentOptionsConsultBinding
+    private val navController by lazy { findNavController() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,30 +26,26 @@ class OptionsConsultFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setOptionsCardsClicks()
+        setClicksOptionsCards()
     }
 
-    private fun setOptionsCardsClicks() {
+    private fun setClicksOptionsCards() {
         binding.apply {
             cardViewCar.setOnClickListener {
-                nextPage(
-                    OptionsConsultFragmentDirections.actionOptionsConsultFragmentToConsultFragment()
-                )
+                goConsult(CAR)
             }
-            binding.cardViewMotorcycle.setOnClickListener {
-                nextPage(
-                    OptionsConsultFragmentDirections.actionOptionsConsultFragmentToConsultFragment()
-                )
+            cardViewMotorcycle.setOnClickListener {
+                goConsult(MOTORCYCLE)
             }
-            binding.cardViewTruck.setOnClickListener {
-                nextPage(
-                    OptionsConsultFragmentDirections.actionOptionsConsultFragmentToConsultFragment()
-                )
+            cardViewTruck.setOnClickListener {
+                goConsult(TRUCK)
             }
         }
     }
 
-    private fun nextPage(directions: NavDirections) {
-        findNavController().navigate(directions)
+    private fun goConsult(type: String) {
+        val directions =
+            OptionsConsultFragmentDirections.actionOptionsConsultFragmentToConsultFragment(type)
+        navController.navigate(directions)
     }
 }
