@@ -1,7 +1,7 @@
 package com.advancedfipe.consult.data.source.remote
 
 import com.advancedfipe.consult.data.source.remote.entity.BrandResponse
-import com.advancedfipe.consult.data.source.remote.entity.ModelResponse
+import com.advancedfipe.consult.data.source.remote.entity.ModelsResponse
 import com.advancedfipe.consult.data.source.remote.entity.ModelYearResponse
 import com.advancedfipe.consult.data.source.remote.entity.VehicleResponse
 import retrofit2.Response
@@ -16,7 +16,7 @@ interface RoutesApi {
     suspend fun getModels(
         @Path("type") type: String,
         @Path("brand") brand: String,
-    ): Response<List<ModelResponse>>
+    ): Response<ModelsResponse>
 
     @GET("{type}/marcas/{brand}/modelos/{model}/anos")
     suspend fun getModelYears(

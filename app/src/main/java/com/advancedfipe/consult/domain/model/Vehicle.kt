@@ -1,5 +1,7 @@
 package com.advancedfipe.consult.domain.model
 
+import java.io.Serializable
+
 open class Vehicle(
     val price: String,
     val brand: String,
@@ -10,4 +12,4 @@ open class Vehicle(
     val referenceMonth: String,
     val vehicleType: Int,
     val acronymFuel: String
-)
+):Serializable

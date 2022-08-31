@@ -16,7 +16,7 @@ import retrofit2.HttpException
 
 class VehicleRepositoryImpl() : IVehicleRepository {
 
-    private var vehicleRoute = Api("https://parallelum.com.br/fipe/api/v1").create()
+    private var vehicleRoute = Api("https://parallelum.com.br/fipe/api/v1/").create()
 
     override suspend fun getBrands(type: String): Flow<List<Brand>> {
         return flow {
@@ -36,7 +36,7 @@ class VehicleRepositoryImpl() : IVehicleRepository {
         return flow {
             vehicleRoute.getModels(type, brand).let { modelResponse ->
                 if (modelResponse.isSuccessful && modelResponse.body() != null) {
-                    ModelToModelMapper().transform(modelResponse.body()!!)
+                    ModelToModelMapper().transform(modelResponse.body()?.models.orEmpty())
                 }else {
                     throw HttpException(modelResponse)
                 }
