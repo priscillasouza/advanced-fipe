@@ -12,6 +12,7 @@ import com.advancedfipe.databinding.FragmentGraphicBinding
 class GraphicFragment: Fragment() {
 
     private lateinit var binding: FragmentGraphicBinding
+    private val navController by lazy { findNavController() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,9 +32,7 @@ class GraphicFragment: Fragment() {
     private fun setNavigationIcon() {
         binding.toolBarGraphic.setNavigationIcon(R.drawable.ic_arrow_back)
         binding.toolBarGraphic.setNavigationOnClickListener {
-            findNavController().navigate(
-                GraphicFragmentDirections.actionGraphicFragmentToResultFragment()
-            )
+            navController.popBackStack()
         }
     }
 }

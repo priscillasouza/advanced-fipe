@@ -1,7 +1,9 @@
 package com.advancedfipe.consult.presentation
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -11,13 +13,13 @@ import com.advancedfipe.databinding.FragmentResultBinding
 class ResultFragment : Fragment() {
 
     private lateinit var binding: FragmentResultBinding
+    private val navController by lazy { findNavController() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentResultBinding.inflate(layoutInflater, container, false)
-
         return binding.root
     }
 
@@ -31,9 +33,7 @@ class ResultFragment : Fragment() {
         binding.apply {
             toolBarResult.setNavigationIcon(R.drawable.ic_arrow_back)
             toolBarResult.setNavigationOnClickListener {
-                findNavController().navigate(
-                    ResultFragmentDirections.actionResultFragmentToConsultFragment()
-                )
+                navController.popBackStack()
             }
             toolBarResult.setOnMenuItemClickListener { menuItem ->
                 when (menuItem.itemId) {
