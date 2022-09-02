@@ -35,7 +35,7 @@ class ConsultViewModel : ViewModel() {
     fun getBrands(type: String) {
         viewModelScope.launch(Dispatchers.IO) {
             if (type.isNotBlank()) {
-                vehicleRepository.getBrands(type.lowercase()).catch { exception ->
+                vehicleRepository.getBrands(type).catch { exception ->
                     _error.postValue(exception.message)
                 }.collect {
                     _brands.postValue(it)
@@ -47,7 +47,7 @@ class ConsultViewModel : ViewModel() {
     fun getModels(type: String?, brand: String) {
         viewModelScope.launch(Dispatchers.IO) {
             if (type != null) {
-                vehicleRepository.getModels(type.lowercase(), brand.lowercase())
+                vehicleRepository.getModels(type, brand)
                     .catch { exception ->
                         _error.postValue(exception.message)
                     }.collect {
@@ -60,9 +60,9 @@ class ConsultViewModel : ViewModel() {
     fun getModelYears(type: String?, brand: String, model: String) {
         viewModelScope.launch(Dispatchers.IO) {
             if (type != null)
-                vehicleRepository.getModelYears(type.lowercase(),
-                    brand.lowercase(),
-                    model.lowercase()).catch { exception ->
+                vehicleRepository.getModelYears(type,
+                    brand,
+                    model).catch { exception ->
                     _error.postValue(exception.message)
                 }.collect {
                     _modelYears.postValue(it)
@@ -73,10 +73,10 @@ class ConsultViewModel : ViewModel() {
     fun getVehicle(type: String?, brand: String, model: String, year: String) {
         viewModelScope.launch(Dispatchers.IO) {
             if (type != null)
-                vehicleRepository.getVehicle(type.lowercase(),
-                    brand.lowercase(),
-                    model.lowercase(),
-                    year.lowercase()).catch { exception ->
+                vehicleRepository.getVehicle(type,
+                    brand,
+                    model,
+                    year).catch { exception ->
                     _error.postValue(exception.message)
                 }.collect {
                     _resultVehicle.postValue(it)

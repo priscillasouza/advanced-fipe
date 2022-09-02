@@ -1,5 +1,6 @@
 package com.advancedfipe.consult.data.repository
 
+import com.advancedfipe.BuildConfig
 import com.advancedfipe.consult.data.source.remote.api.Api
 import com.advancedfipe.consult.domain.mappers.BrandToModelMapper
 import com.advancedfipe.consult.domain.mappers.ModelToModelMapper
@@ -16,7 +17,7 @@ import retrofit2.HttpException
 
 class VehicleRepositoryImpl() : IVehicleRepository {
 
-    private var vehicleRoute = Api("https://parallelum.com.br/fipe/api/v1/").create()
+    private var vehicleRoute = Api(BuildConfig.API_URL).create()
 
     override suspend fun getBrands(type: String): Flow<List<Brand>> {
         return flow {
@@ -40,7 +41,6 @@ class VehicleRepositoryImpl() : IVehicleRepository {
                 }else {
                     throw HttpException(modelResponse)
                 }
-
             }.let {
                 emit(it)
             }
@@ -59,7 +59,6 @@ class VehicleRepositoryImpl() : IVehicleRepository {
                 }else {
                     throw HttpException(modelYearResponse)
                 }
-
             }.let {
                 emit(it)
             }
@@ -79,7 +78,6 @@ class VehicleRepositoryImpl() : IVehicleRepository {
                 }else {
                     throw HttpException(vehicleResponse)
                 }
-
             }.let {
                 emit(it)
             }

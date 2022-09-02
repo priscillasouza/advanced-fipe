@@ -36,13 +36,13 @@ class ConsultFragment : Fragment() {
     ): View {
         binding = FragmentConsultBinding.inflate(layoutInflater, container, false)
         consultViewModel = ConsultViewModel()
-        setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         consultViewModel.getBrands(type)
+        setHasOptionsMenu(true)
         setNavigationIcon()
         setClickButtonConsult()
         onObserver()

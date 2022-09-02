@@ -19,13 +19,12 @@ class GraphicFragment: Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentGraphicBinding.inflate(layoutInflater, container, false)
-
-        setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
         setNavigationIcon()
     }
 

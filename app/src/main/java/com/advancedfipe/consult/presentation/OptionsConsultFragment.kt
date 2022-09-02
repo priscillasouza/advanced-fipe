@@ -18,7 +18,7 @@ class OptionsConsultFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View {
         binding = FragmentOptionsConsultBinding.inflate(layoutInflater, container, false)
         return binding.root

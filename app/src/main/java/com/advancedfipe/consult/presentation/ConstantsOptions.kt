@@ -1,7 +1,7 @@
 package com.advancedfipe.consult.presentation
 
 object ConstantsOptions {
-    const val CAR = "Carros"
-    const val MOTORCYCLE = "Motos"
-    const val TRUCK = "Caminhoes"
+    const val CAR = "carros"
+    const val MOTORCYCLE = "motos"
+    const val TRUCK = "caminhoes"
 }

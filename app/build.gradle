@@ -22,11 +22,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
-            buildConfigField "String", "API_URL", "\"https://parallelum.com.br/fipe/api/v1/\""
-
+            buildConfigField ("String", "API_URL", "\"https://parallelum.com.br/fipe/api/v1/\"")
         }
         debug {
-            buildConfigField "String", "API_URL", "\"https://parallelum.com.br/fipe/api/v1/\""
+            buildConfigField ("String", "API_URL", "\"https://parallelum.com.br/fipe/api/v1/\"")
         }
     }
     compileOptions {

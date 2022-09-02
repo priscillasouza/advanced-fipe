@@ -1,7 +1,9 @@
 package com.advancedfipe.consult.data.source.remote.entity
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
+@Keep
 data class VehicleResponse(
     @SerializedName("Valor")
     val price: String,
