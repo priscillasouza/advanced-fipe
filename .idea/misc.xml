@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1915" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/background_bottom_navigation.xml" value="0.182" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/background_button.xml" value="0.216" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/bottom_item_background_color.xml" value="0.211" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/ic_arrow_back.xml" value="0.211" />
@@ -16,18 +17,28 @@
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/ic_search.xml" value="0.185" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/selector_favorite.xml" value="0.211" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/selector_favorite_item.xml" value="0.252" />
-        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/activity_consult.xml" value="0.1" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/activity_consult_options.xml" value="0.14" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/activity_options_consult.xml" value="0.18" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/favorite_item.xml" value="0.25" />
-        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_consult_code_screen.xml" value="0.25625" />
-        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_consult_common_screen.xml" value="0.37972768532526474" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_consult.xml" value="0.25" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_consult_code.xml" value="0.17407407407407408" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_consult_code_screen.xml" value="0.33" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_consult_common.xml" value="0.17407407407407408" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_consult_common_screen.xml" value="0.33" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_consult_screen.xml" value="0.146875" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_dashboard.xml" value="0.22" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_details.xml" value="0.2388888888888889" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_favorites.xml" value="0.25" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_graphic.xml" value="0.20277777777777778" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_onboarding.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_options_consult.xml" value="0.22" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_result.xml" value="0.1" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_result_screen.xml" value="0.18" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/layout/fragment_search_options_screen.xml" value="0.18" />
-        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.21" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/menu/app_bar_menu.xml" value="0.28489583333333335" />
+        <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
         <entry key="..\:/Users/prisc/Documents/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/menu/top_app_bar.xml" value="0.15" />
         <entry key="..\:/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/bottom_item_background_color.xml" value="0.1390625" />
         <entry key="..\:/projetos-android-kotlin/AdvancedFIPE/app/src/main/res/drawable/ic_arrow_back.xml" value="0.25" />
@@ -48,7 +59,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.1" />
+        <option name="scale" value="0.25625" />
       </ProjectState>
     </option>
   </component>
