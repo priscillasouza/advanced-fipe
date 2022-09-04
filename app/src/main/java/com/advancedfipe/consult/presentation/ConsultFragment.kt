@@ -123,7 +123,11 @@ class ConsultFragment : Fragment() {
 
         consultViewModel.apply {
             resultVehicle.observe(viewLifecycleOwner) {
-                setClickButtonConsult()
+                val action =
+                    ConsultFragmentDirections.actionConsultFragmentToResultFragment(it)
+                findNavController().navigate(
+                    action
+                )
             }
 
             error.observe(viewLifecycleOwner) {
@@ -136,11 +140,7 @@ class ConsultFragment : Fragment() {
     private fun setClickButtonConsult() {
         binding.buttonConsult.setOnClickListener {
             if (validateSelectedFields()) {
-                val action =
-                    ConsultFragmentDirections.actionConsultFragmentToResultFragment()
-                findNavController().navigate(
-                    action
-                )
+                consultViewModel.getVehicle(type, brandSelected?.code.orEmpty(), modelSelected?.code.orEmpty(), modelYearSelected?.code.orEmpty())
             } else {
                 Toast.makeText(context, "Selecione todos os campos", Toast.LENGTH_SHORT).show()
             }

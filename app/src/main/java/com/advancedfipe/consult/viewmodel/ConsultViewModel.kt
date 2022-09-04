@@ -70,7 +70,7 @@ class ConsultViewModel : ViewModel() {
         }
     }
 
-    fun getVehicle(type: String?, brand: String, model: String, year: String) {
+    fun getVehicle(type: String, brand: String, model: String, year: String) {
         viewModelScope.launch(Dispatchers.IO) {
             if (type != null)
                 vehicleRepository.getVehicle(type,

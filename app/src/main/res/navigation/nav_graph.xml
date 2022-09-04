@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_favorites" />
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.advancedfipe.consult.presentation.ResultFragment"
+        android:name="com.advancedfipe.result.presentation.ResultFragment"
         android:label="ResultFragment"
         tools:layout="@layout/fragment_result">
         <action
@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_resultFragment_to_graphicFragment"
             app:destination="@id/graphicFragment" />
+        <argument
+            android:name="vehicle"
+            app:argType="com.advancedfipe.consult.domain.model.Vehicle" />
     </fragment>
     <fragment
         android:id="@+id/consultFragment"
