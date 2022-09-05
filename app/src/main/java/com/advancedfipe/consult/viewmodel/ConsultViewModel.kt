@@ -32,6 +32,9 @@ class ConsultViewModel : ViewModel() {
     private val _error: MutableLiveData<String> = MutableLiveData()
     val error: LiveData<String> = _error
 
+    private var _showProgressBar = MutableLiveData<Boolean>()
+    var showProgressBar: LiveData<Boolean> = _showProgressBar
+
     fun getBrands(type: String) {
         viewModelScope.launch(Dispatchers.IO) {
             if (type.isNotBlank()) {
@@ -79,6 +82,7 @@ class ConsultViewModel : ViewModel() {
                     year).catch { exception ->
                     _error.postValue(exception.message)
                 }.collect {
+                    _showProgressBar.postValue(true)
                     _resultVehicle.postValue(it)
                 }
         }

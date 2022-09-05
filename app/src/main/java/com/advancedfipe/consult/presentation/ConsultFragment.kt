@@ -18,6 +18,7 @@ import com.advancedfipe.consult.domain.model.Model
 import com.advancedfipe.consult.domain.model.ModelYear
 import com.advancedfipe.consult.viewmodel.ConsultViewModel
 import com.advancedfipe.databinding.FragmentConsultBinding
+import com.advancedfipe.extensions.show
 
 class ConsultFragment : Fragment() {
 
@@ -134,6 +135,10 @@ class ConsultFragment : Fragment() {
                 Toast.makeText(requireContext(), "Falha ao fazer a consulta", Toast.LENGTH_SHORT)
                     .show()
             }
+        }
+
+        consultViewModel.showProgressBar.observe(viewLifecycleOwner) { showProgressBar ->
+            binding.progressBar.show(showProgressBar)
         }
     }
 
