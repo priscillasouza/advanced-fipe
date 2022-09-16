@@ -1,0 +1,88 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "d33b7c10207480960fec73365c523b73",
+    "entities": [
+      {
+        "tableName": "vehicle_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`fipeCode` TEXT NOT NULL, `price` TEXT NOT NULL, `brand` TEXT NOT NULL, `model` TEXT NOT NULL, `modelYear` INTEGER NOT NULL, `fuel` TEXT NOT NULL, `referenceMonth` TEXT NOT NULL, `vehicleType` INTEGER NOT NULL, `acronymFuel` TEXT NOT NULL, `favorite` INTEGER NOT NULL, PRIMARY KEY(`fipeCode`))",
+        "fields": [
+          {
+            "fieldPath": "fipeCode",
+            "columnName": "fipeCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "brand",
+            "columnName": "brand",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "model",
+            "columnName": "model",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modelYear",
+            "columnName": "modelYear",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fuel",
+            "columnName": "fuel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "referenceMonth",
+            "columnName": "referenceMonth",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vehicleType",
+            "columnName": "vehicleType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "acronymFuel",
+            "columnName": "acronymFuel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "favorite",
+            "columnName": "favorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "fipeCode"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd33b7c10207480960fec73365c523b73')"
+    ]
+  }
+}

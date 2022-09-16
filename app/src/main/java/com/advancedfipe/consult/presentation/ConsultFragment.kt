@@ -36,7 +36,7 @@ class ConsultFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentConsultBinding.inflate(layoutInflater, container, false)
-        consultViewModel = ConsultViewModel()
+        consultViewModel = ConsultViewModel(context)
         return binding.root
     }
 
@@ -123,14 +123,13 @@ class ConsultFragment : Fragment() {
         }
 
         consultViewModel.apply {
-            resultVehicle.observe(viewLifecycleOwner) {
+            consultVehicle.observe(viewLifecycleOwner) {
                 val action =
                     ConsultFragmentDirections.actionConsultFragmentToResultFragment(it)
                 findNavController().navigate(
                     action
                 )
             }
-
             error.observe(viewLifecycleOwner) {
                 Toast.makeText(requireContext(), "Falha ao fazer a consulta", Toast.LENGTH_SHORT)
                     .show()
@@ -145,7 +144,10 @@ class ConsultFragment : Fragment() {
     private fun setClickButtonConsult() {
         binding.buttonConsult.setOnClickListener {
             if (validateSelectedFields()) {
-                consultViewModel.getVehicle(type, brandSelected?.code.orEmpty(), modelSelected?.code.orEmpty(), modelYearSelected?.code.orEmpty())
+                consultViewModel.getVehicle(type,
+                    brandSelected?.code.orEmpty(),
+                    modelSelected?.code.orEmpty(),
+                    modelYearSelected?.code.orEmpty())
             } else {
                 Toast.makeText(context, "Selecione todos os campos", Toast.LENGTH_SHORT).show()
             }
