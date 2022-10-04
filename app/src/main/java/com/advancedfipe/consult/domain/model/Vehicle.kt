@@ -14,5 +14,5 @@ data class Vehicle(
     val referenceMonth: String,
     val vehicleType: Int,
     val acronymFuel: String,
-    val favorite: Boolean = false
+    var favorite: Boolean = false
 ):Parcelable

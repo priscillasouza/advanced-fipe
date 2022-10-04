@@ -36,7 +36,7 @@ class ConsultFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentConsultBinding.inflate(layoutInflater, container, false)
-        consultViewModel = ConsultViewModel(context)
+        consultViewModel = ConsultViewModel(requireContext())
         return binding.root
     }
 

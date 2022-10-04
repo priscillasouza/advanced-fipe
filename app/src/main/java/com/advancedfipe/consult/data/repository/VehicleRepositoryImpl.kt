@@ -16,12 +16,12 @@ import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 
 class VehicleRepositoryImpl(
-    private val context: Context? = null,
+    context: Context,
 ) : IVehicleRepository {
 
     private var vehicleRoute = Api(BuildConfig.API_URL).create()
 
-    private var vehicleDao: VehicleDao? = context?.run {
+    private var vehicleDao: VehicleDao? = context.run {
         VehicleDatabase.getDatabase(this.applicationContext).vehicleDao()
     }
 
@@ -108,6 +108,18 @@ class VehicleRepositoryImpl(
                 .also {
                     vehicleDao?.update(it) ?: throw Exception("VehicleDAO is null")
                 }
+        }
+    }
+
+    suspend fun getFavorites(): Flow<List<Vehicle>> {
+        return flow {
+            vehicleDao?.getFavorites().let { listVehicleEntity ->
+                listVehicleEntity?.let {
+                    vehicleEntityToModelMapper.transform(it)
+                } ?: throw Exception("VehicleDAO is null")
+            }.let {
+                emit(it)
+            }
         }
     }
 }

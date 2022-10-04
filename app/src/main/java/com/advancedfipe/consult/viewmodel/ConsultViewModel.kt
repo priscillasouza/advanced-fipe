@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.flatMapConcat
 import kotlinx.coroutines.launch
 
 class ConsultViewModel(
-    private val context: Context? = null
+    context: Context
 ) : ViewModel() {
 
     private var vehicleRepository = VehicleRepositoryImpl(context)

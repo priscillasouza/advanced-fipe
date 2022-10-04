@@ -24,5 +24,4 @@ interface IVehicleRepository {
     suspend fun saveVehicle(vehicle: Vehicle): Flow<Vehicle>
 
     suspend fun update(vehicle: Vehicle): Flow<Vehicle>
-
 }

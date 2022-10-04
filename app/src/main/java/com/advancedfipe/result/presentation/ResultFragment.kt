@@ -10,10 +10,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.advancedfipe.R
 import com.advancedfipe.databinding.FragmentResultBinding
+import com.advancedfipe.result.viewmodel.ResultViewModel
 
 class ResultFragment : Fragment() {
 
     private lateinit var binding: FragmentResultBinding
+    private lateinit var resultViewModel: ResultViewModel
     private val navController by lazy { findNavController() }
     private val args by navArgs<ResultFragmentArgs>()
     private val vehicle by lazy { args.vehicle }
@@ -23,14 +25,17 @@ class ResultFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentResultBinding.inflate(layoutInflater, container, false)
+        resultViewModel = ResultViewModel(requireContext())
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setNavigationIconsToolBar()
+        onObserver()
         getResultConsult()
+        setNavigationIconsToolBar()
         setClickButtonGraphic()
+        setClickFavorite()
     }
 
     private fun setNavigationIconsToolBar() {
@@ -42,11 +47,38 @@ class ResultFragment : Fragment() {
             toolBarResult.setOnMenuItemClickListener { menuItem ->
                 when (menuItem.itemId) {
                     R.id.item_menu_share -> {
-                        Toast.makeText(context, "Ícone para compartilhar", Toast.LENGTH_LONG).show()
+                        Toast.makeText(context, "Ícone para compartilhar", Toast.LENGTH_LONG)
+                            .show()
                         true
                     }
                     else -> false
                 }
+            }
+        }
+    }
+
+    private fun onObserver() {
+        resultViewModel.apply {
+            updateVehicle.observe(viewLifecycleOwner) {
+                Toast.makeText(requireContext(),
+                    if (it.favorite) "FAVORITADO" else "DESFAVORITADO",
+                    Toast.LENGTH_SHORT)
+                    .show()
+            }
+            error.observe(viewLifecycleOwner) {
+                Toast.makeText(requireContext(),
+                    "Falha ao favoritar o veículo",
+                    Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
+    }
+
+    private fun setClickFavorite() {
+        binding.apply {
+            iconCheckBoxFavorite.isChecked = vehicle.favorite
+            iconCheckBoxFavorite.setOnCheckedChangeListener { _, isChecked ->
+                resultViewModel.updateFavoriteVehicle(vehicle.copy(favorite = isChecked))
             }
         }
     }
