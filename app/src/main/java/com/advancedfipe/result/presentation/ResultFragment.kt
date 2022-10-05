@@ -1,5 +1,6 @@
 package com.advancedfipe.result.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -32,10 +33,10 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onObserver()
-        getResultConsult()
         setNavigationIconsToolBar()
-        setClickButtonGraphic()
+        getResultConsult()
         setClickFavorite()
+        setClickButtonGraphic()
     }
 
     private fun setNavigationIconsToolBar() {
@@ -47,8 +48,13 @@ class ResultFragment : Fragment() {
             toolBarResult.setOnMenuItemClickListener { menuItem ->
                 when (menuItem.itemId) {
                     R.id.item_menu_share -> {
-                        Toast.makeText(context, "Ícone para compartilhar", Toast.LENGTH_LONG)
-                            .show()
+                        setOptionToShare()
+                        true
+                    }
+                    R.id.item_menu_favorites -> {
+                        findNavController().navigate(
+                            ResultFragmentDirections.actionResultFragmentToFavoritesFragment()
+                        )
                         true
                     }
                     else -> false
@@ -61,13 +67,13 @@ class ResultFragment : Fragment() {
         resultViewModel.apply {
             updateVehicle.observe(viewLifecycleOwner) {
                 Toast.makeText(requireContext(),
-                    if (it.favorite) "FAVORITADO" else "DESFAVORITADO",
+                    if (it.favorite) getString(R.string.text_favorited) else getString(R.string.text_disfavor),
                     Toast.LENGTH_SHORT)
                     .show()
             }
             error.observe(viewLifecycleOwner) {
                 Toast.makeText(requireContext(),
-                    "Falha ao favoritar o veículo",
+                    getString(R.string.text_error_favorite),
                     Toast.LENGTH_SHORT)
                     .show()
             }
@@ -92,6 +98,21 @@ class ResultFragment : Fragment() {
             textViewResultModelYear.text = vehicle.modelYear.toString()
             textViewResultPrice.text = vehicle.price
         }
+    }
+
+    private fun setOptionToShare() {
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = getString(R.string.text_plain_type)
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.text_share_title))
+        intent.putExtra(Intent.EXTRA_TEXT,
+            String.format(getString(R.string.text_share),
+                vehicle.referenceMonth,
+                vehicle.fipeCode,
+                vehicle.brand,
+                vehicle.model,
+                vehicle.modelYear,
+                vehicle.price))
+        startActivity(Intent.createChooser(intent, getString(R.string.text_share_options)))
     }
 
     private fun setClickButtonGraphic() {
