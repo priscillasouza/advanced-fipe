@@ -17,15 +17,14 @@ class OnboardingFragment : Fragment() {
     private val PAGE_FAVORITES = 2
     private val PAGE_GRAPHIC = 3
     private val PAGE_SHARE = 4
-
     private var _binding: FragmentOnboardingBinding? = null
     private val binding: FragmentOnboardingBinding get() = _binding!!
-
+    private val navController by lazy { findNavController() }
     private lateinit var onboardingViewModel: OnboardingViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View = FragmentOnboardingBinding.inflate(inflater, container, false).apply {
         _binding = this
         onboardingViewModel = OnboardingViewModel()
@@ -33,9 +32,19 @@ class OnboardingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setNavigationIcon()
         setNextButtonClick()
         setBackButtonClick()
         observerViewModel()
+    }
+
+    private fun setNavigationIcon() {
+        binding.apply {
+            toolBarOnboarding.setNavigationIcon(R.drawable.ic_arrow_back)
+            toolBarOnboarding.setNavigationOnClickListener {
+                navController.popBackStack()
+            }
+        }
     }
 
     private fun getImageOnboarding(page: Int): Int {
@@ -129,7 +138,7 @@ class OnboardingFragment : Fragment() {
                     initPage(it.page)
                 }
                 is OnboardingState.EndOnboarding -> {
-                    nextPage(OnboardingFragmentDirections.actionOnboardingFragmentToOptionsConsultFragment())
+                    nextPage(OnboardingFragmentDirections.actionOnboardingFragmentSelf())
                 }
             }
         }

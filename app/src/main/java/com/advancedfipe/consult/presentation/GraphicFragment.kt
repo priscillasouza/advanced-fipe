@@ -24,14 +24,15 @@ class GraphicFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setHasOptionsMenu(true)
         setNavigationIcon()
     }
 
     private fun setNavigationIcon() {
-        binding.toolBarGraphic.setNavigationIcon(R.drawable.ic_arrow_back)
-        binding.toolBarGraphic.setNavigationOnClickListener {
-            navController.popBackStack()
+        binding.apply {
+            toolBarGraphic.setNavigationIcon(R.drawable.ic_arrow_back)
+            toolBarGraphic.setNavigationOnClickListener {
+                navController.popBackStack()
+            }
         }
     }
 }

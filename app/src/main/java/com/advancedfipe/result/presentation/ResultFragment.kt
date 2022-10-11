@@ -47,14 +47,8 @@ class ResultFragment : Fragment() {
             }
             toolBarResult.setOnMenuItemClickListener { menuItem ->
                 when (menuItem.itemId) {
-                    R.id.item_menu_share -> {
+                    R.id.item_menu_options_consult_help -> {
                         setOptionToShare()
-                        true
-                    }
-                    R.id.item_menu_favorites -> {
-                        findNavController().navigate(
-                            ResultFragmentDirections.actionResultFragmentToFavoritesFragment()
-                        )
                         true
                     }
                     else -> false
