@@ -6,14 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.advancedfipe.R
 import com.advancedfipe.databinding.FragmentFavoritesBinding
 import com.advancedfipe.favorite.adapter.ListFavoritesVehicleAdapter
 import com.advancedfipe.favorite.viewmodel.FavoritesViewModel
 import kotlinx.android.synthetic.main.favorite_item.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class FavoritesFragment : Fragment() {
 
@@ -43,7 +41,7 @@ class FavoritesFragment : Fragment() {
                 adapterRecyclerViewListFavorites.setList(vehicle)
             }
             error.observe(viewLifecycleOwner) {
-                Toast.makeText(requireContext(), "Falha na lista de favoritos", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(), getString(R.string.text_fail_in_favorites_list), Toast.LENGTH_SHORT)
                     .show()
             }
         }
@@ -53,7 +51,7 @@ class FavoritesFragment : Fragment() {
                 adapterRecyclerViewListFavorites.setList(arrayListOf())
             }
             error.observe(viewLifecycleOwner) {
-                Toast.makeText(requireContext(), "Falha ao desfavoritar o item", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(), getString(R.string.text_failure_unfavorite_item), Toast.LENGTH_SHORT)
                     .show()
             }
         }
@@ -65,7 +63,8 @@ class FavoritesFragment : Fragment() {
             adapterRecyclerViewListFavorites.setOnClickFavorite {
                     if (!check_box_item_favorite.isChecked) {
                         favoritesViewModel.updateFavorite(vehicle = it)
-                        Toast.makeText(context, "Desfavoritado com sucesso", Toast.LENGTH_SHORT)
+                        Toast.makeText(context,
+                            context.getString(R.string.text_unfavored_successfully), Toast.LENGTH_SHORT)
                             .show()
                 }
             }

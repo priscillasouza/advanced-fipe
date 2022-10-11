@@ -66,4 +66,15 @@
     <string name="text_favorited">FAVORITADO</string>
     <string name="text_disfavor">DESFAVORITADO</string>
     <string name="text_plain_type">text/plain</string>
+    <string name="text_menu_help">Ajuda</string>
+    <string name="text_options_consult">Opções de consulta</string>
+    <string name="text_tool_bar_tutorial">Tutorial</string>
+    <string name="text_brand_list_failure">Falha na lista de marcas</string>
+    <string name="text_fail_in_models_list">Falha na lista de modelos</string>
+    <string name="text_fail_in_model_year_list">Falha na lista de ano modelo</string>
+    <string name="failed_making_consult">Falha ao fazer a consulta</string>
+    <string name="text_select_all_fields">Selecione todos os campos</string>
+    <string name="text_fail_in_favorites_list">Falha na lista de favoritos</string>
+    <string name="text_failure_unfavorite_item">Falha ao desfavoritar o item</string>
+    <string name="text_unfavored_successfully">Desfavoritado com sucesso</string>
 </resources>
