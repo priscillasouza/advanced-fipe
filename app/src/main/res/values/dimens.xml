@@ -6,5 +6,6 @@
     <dimen name="image_onboarding_width">160dp</dimen>
     <dimen name="image_onboarding_heigth">160dp</dimen>
     <dimen name="card_view_options_consult_heigth">180dp</dimen>
-
+    <dimen name="image_splash_width">160dp</dimen>
+    <dimen name="image_splash_heigth">160dp</dimen>
 </resources>

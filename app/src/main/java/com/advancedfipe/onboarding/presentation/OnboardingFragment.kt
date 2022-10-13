@@ -49,10 +49,10 @@ class OnboardingFragment : Fragment() {
 
     private fun getImageOnboarding(page: Int): Int {
         return when (page) {
-            1 -> R.drawable.img_onboarding
-            2 -> R.drawable.img_onboarding
-            3 -> R.drawable.img_onboarding
-            4 -> R.drawable.img_onboarding
+            1 -> R.drawable.img_search
+            2 -> R.drawable.img_search
+            3 -> R.drawable.img_search
+            4 -> R.drawable.img_search
             else -> 0
         }
     }

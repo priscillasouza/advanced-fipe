@@ -77,4 +77,5 @@
     <string name="text_fail_in_favorites_list">Falha na lista de favoritos</string>
     <string name="text_failure_unfavorite_item">Falha ao desfavoritar o item</string>
     <string name="text_unfavored_successfully">Desfavoritado com sucesso</string>
+    <string name="text_advanced_fipe_splash">ADVANCED FIPE</string>
 </resources>
