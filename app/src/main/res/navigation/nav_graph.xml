@@ -21,7 +21,11 @@
         android:id="@+id/favoritesFragment"
         android:name="com.advancedfipe.favorite.presentation.FavoritesFragment"
         android:label="FavoritesFragment"
-        tools:layout="@layout/fragment_favorites" />
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.advancedfipe.result.presentation.ResultFragment"
@@ -78,4 +82,16 @@
         android:name="com.advancedfipe.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.advancedfipe.details.presentation.DetailsFragment"
+        android:label="DetailsFragment"
+        tools:layout="@layout/fragment_details">
+        <action
+            android:id="@+id/action_detailsFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+        <argument
+            android:name="vehicle"
+            app:argType="com.advancedfipe.consult.domain.model.Vehicle" />
+    </fragment>
 </navigation>
