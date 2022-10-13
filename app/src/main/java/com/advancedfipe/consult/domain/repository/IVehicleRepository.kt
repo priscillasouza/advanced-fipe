@@ -20,4 +20,8 @@ interface IVehicleRepository {
         model: String,
         modelYear: String,
     ): Flow<Vehicle>
+
+    suspend fun saveVehicle(vehicle: Vehicle): Flow<Vehicle>
+
+    suspend fun update(vehicle: Vehicle): Flow<Vehicle>
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_dashboard"
-    app:startDestination="@id/onboardingFragment">
+    app:startDestination="@id/optionsConsultFragment">
 
     <fragment
         android:id="@+id/optionsConsultFragment"
@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_optionsConsultFragment_to_consultFragment"
             app:destination="@+id/consultFragment" />
+        <action
+            android:id="@+id/action_optionsConsultFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
@@ -21,7 +24,7 @@
         tools:layout="@layout/fragment_favorites" />
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.advancedfipe.consult.presentation.ResultFragment"
+        android:name="com.advancedfipe.result.presentation.ResultFragment"
         android:label="ResultFragment"
         tools:layout="@layout/fragment_result">
         <action
@@ -30,6 +33,9 @@
         <action
             android:id="@+id/action_resultFragment_to_graphicFragment"
             app:destination="@id/graphicFragment" />
+        <argument
+            android:name="vehicle"
+            app:argType="com.advancedfipe.consult.domain.model.Vehicle" />
     </fragment>
     <fragment
         android:id="@+id/consultFragment"
@@ -52,6 +58,9 @@
         android:label="OnboardingFragment"
         tools:layout="@layout/fragment_onboarding">
         <action
+            android:id="@+id/action_onboardingFragment_self"
+            app:destination="@id/onboardingFragment" />
+        <action
             android:id="@+id/action_onboardingFragment_to_optionsConsultFragment"
             app:destination="@id/optionsConsultFragment" />
     </fragment>
@@ -64,4 +73,9 @@
             android:id="@+id/action_graphicFragment_to_resultFragment"
             app:destination="@id/resultFragment" />
     </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.advancedfipe.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
 </navigation>

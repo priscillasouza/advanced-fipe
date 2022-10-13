@@ -1,10 +1,11 @@
-package com.advancedfipe.consult.domain.model
+package com.advancedfipe.data.source.local.entity
 
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-@Parcelize
-data class Vehicle(
+@Entity(tableName = "vehicle_table")
+data class VehicleEntity(
+    @PrimaryKey(autoGenerate = false)
     val fipeCode: String,
     val price: String,
     val brand: String,
@@ -15,4 +16,4 @@ data class Vehicle(
     val vehicleType: Int,
     val acronymFuel: String,
     var favorite: Boolean = false
-):Parcelable
+)

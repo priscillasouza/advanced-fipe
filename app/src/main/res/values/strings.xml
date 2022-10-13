@@ -41,7 +41,7 @@
     <string name="text_title_onboarding_price">Pesquise o preço médio do veículo</string>
     <string name="text_title_onboarding_favorites">Favorite as consultas desejadas</string>
     <string name="text_subtitle_onboarding_favorites">Você poderá favoritar as consultas que deseja ver novamente</string>
-    <string name="text_title_onboarding_graphic">Gráfico evolutivo de preços</string>
+    <string name="text_title_onboarding_graphic">Veja o gráfico evolutivo de preços</string>
     <string name="text_subtitle_onboarding_graphic">Você poderá visualizar o gráfico evolutivo de preço do veículo por mês e ano</string>
     <string name="text_title_onboarding_share">Compartilhe suas consultas</string>
     <string name="text_subtitle_onboarding_share">Você poderá compartilhar as consultas realizadas</string>
@@ -59,4 +59,22 @@
     <string name="fragment_dashboard">fragment_dashboard</string>
     <string name="onboarding_fragment">onboarding_fragment</string>
     <string name="text_menu_item_share">Compartilhar</string>
+    <string name="text_share">"Veja essa consulta de veículo feita no aplicativo Advanced Fipe\nMês de referência: %s\nCódigo Fipe: %s\nMarca: %s\nModelo: %s\nAno modelo: %s\nPreço: %s"</string>
+    <string name="text_share_options">Escolha uma opção</string>
+    <string name="text_share_title">Consulta tabela Fipe</string>
+    <string name="text_error_favorite">Falha ao favoritar o veículo</string>
+    <string name="text_favorited">FAVORITADO</string>
+    <string name="text_disfavor">DESFAVORITADO</string>
+    <string name="text_plain_type">text/plain</string>
+    <string name="text_menu_help">Ajuda</string>
+    <string name="text_options_consult">Opções de consulta</string>
+    <string name="text_tool_bar_tutorial">Tutorial</string>
+    <string name="text_brand_list_failure">Falha na lista de marcas</string>
+    <string name="text_fail_in_models_list">Falha na lista de modelos</string>
+    <string name="text_fail_in_model_year_list">Falha na lista de ano modelo</string>
+    <string name="failed_making_consult">Falha ao fazer a consulta</string>
+    <string name="text_select_all_fields">Selecione todos os campos</string>
+    <string name="text_fail_in_favorites_list">Falha na lista de favoritos</string>
+    <string name="text_failure_unfavorite_item">Falha ao desfavoritar o item</string>
+    <string name="text_unfavored_successfully">Desfavoritado com sucesso</string>
 </resources>

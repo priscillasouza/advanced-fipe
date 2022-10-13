@@ -18,6 +18,7 @@ import com.advancedfipe.consult.domain.model.Model
 import com.advancedfipe.consult.domain.model.ModelYear
 import com.advancedfipe.consult.viewmodel.ConsultViewModel
 import com.advancedfipe.databinding.FragmentConsultBinding
+import com.advancedfipe.extensions.show
 
 class ConsultFragment : Fragment() {
 
@@ -35,23 +36,24 @@ class ConsultFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentConsultBinding.inflate(layoutInflater, container, false)
-        consultViewModel = ConsultViewModel()
+        consultViewModel = ConsultViewModel(requireContext())
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         consultViewModel.getBrands(type)
-        setHasOptionsMenu(true)
         setNavigationIcon()
         setClickButtonConsult()
         onObserver()
     }
 
     private fun setNavigationIcon() {
-        binding.toolBarConsultScreen.setNavigationIcon(R.drawable.ic_arrow_back)
-        binding.toolBarConsultScreen.setNavigationOnClickListener {
-            navController.popBackStack()
+        binding.apply {
+            toolBarConsult.setNavigationIcon(R.drawable.ic_arrow_back)
+            toolBarConsult.setNavigationOnClickListener {
+                navController.popBackStack()
+            }
         }
     }
 
@@ -71,7 +73,9 @@ class ConsultFragment : Fragment() {
             }
 
             error.observe(viewLifecycleOwner) {
-                Toast.makeText(requireContext(), "Falha na lista de marcas", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(),
+                    getString(R.string.text_brand_list_failure),
+                    Toast.LENGTH_SHORT)
                     .show()
             }
         }
@@ -93,7 +97,9 @@ class ConsultFragment : Fragment() {
             }
 
             error.observe(viewLifecycleOwner) {
-                Toast.makeText(requireContext(), "Falha na lista de modelos", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(),
+                    getString(R.string.text_fail_in_models_list),
+                    Toast.LENGTH_SHORT)
                     .show()
             }
         }
@@ -116,33 +122,45 @@ class ConsultFragment : Fragment() {
             }
 
             error.observe(viewLifecycleOwner) {
-                Toast.makeText(requireContext(), "Falha na lista de ano modelo", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(),
+                    getString(R.string.text_fail_in_model_year_list),
+                    Toast.LENGTH_SHORT)
                     .show()
             }
         }
 
         consultViewModel.apply {
-            resultVehicle.observe(viewLifecycleOwner) {
-                setClickButtonConsult()
+            consultVehicle.observe(viewLifecycleOwner) {
+                val action =
+                    ConsultFragmentDirections.actionConsultFragmentToResultFragment(it)
+                findNavController().navigate(
+                    action
+                )
             }
-
             error.observe(viewLifecycleOwner) {
-                Toast.makeText(requireContext(), "Falha ao fazer a consulta", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(),
+                    getString(R.string.failed_making_consult),
+                    Toast.LENGTH_SHORT)
                     .show()
             }
+        }
+
+        consultViewModel.showProgressBar.observe(viewLifecycleOwner) { showProgressBar ->
+            binding.progressBar.show(showProgressBar)
         }
     }
 
     private fun setClickButtonConsult() {
         binding.buttonConsult.setOnClickListener {
             if (validateSelectedFields()) {
-                val action =
-                    ConsultFragmentDirections.actionConsultFragmentToResultFragment()
-                findNavController().navigate(
-                    action
-                )
+                consultViewModel.getVehicle(type,
+                    brandSelected?.code.orEmpty(),
+                    modelSelected?.code.orEmpty(),
+                    modelYearSelected?.code.orEmpty())
             } else {
-                Toast.makeText(context, "Selecione todos os campos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,
+                    getString(R.string.text_select_all_fields),
+                    Toast.LENGTH_SHORT).show()
             }
         }
     }

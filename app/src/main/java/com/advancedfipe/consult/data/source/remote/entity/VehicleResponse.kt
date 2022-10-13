@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName
 
 @Keep
 data class VehicleResponse(
+    @SerializedName("CodigoFipe")
+    val fipeCode: String,
     @SerializedName("Valor")
     val price: String,
     @SerializedName("Marca")
@@ -15,8 +17,6 @@ data class VehicleResponse(
     val modelYear: Int,
     @SerializedName("Combustivel")
     val fuel: String,
-    @SerializedName("CodigoFipe")
-    val fipeCode: String,
     @SerializedName("MesReferencia")
     val referenceMonth: String,
     @SerializedName("TipoVeiculo")
