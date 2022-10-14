@@ -2,9 +2,11 @@ package com.advancedfipe.favorite.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.advancedfipe.consult.domain.model.Vehicle
 import com.advancedfipe.databinding.FavoriteItemBinding
+import com.advancedfipe.favorite.presentation.FavoritesFragmentDirections
 
 class ListFavoritesVehicleAdapter :
     RecyclerView.Adapter<ListFavoritesVehicleAdapter.VehicleViewHolder>() {
@@ -53,6 +55,11 @@ class ListFavoritesVehicleAdapter :
                 checkBoxItemFavorite.isChecked = vehicle.favorite
                 checkBoxItemFavorite.setOnClickListener {
                     onClickFavorite?.invoke(vehicle.copy(favorite = vehicle.favorite.not()))
+                }
+
+                cardViewFavorites.setOnClickListener {
+                    val action = FavoritesFragmentDirections.actionFavoritesFragmentToDetailsFragment(vehicle)
+                    cardViewFavorites.findNavController().navigate(action)
                 }
             }
         }

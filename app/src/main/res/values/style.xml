@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="TextViewResultBold">
+    <style name="TextViewBold">
         <item name="android:textColor">@color/gray</item>
         <item name="android:textSize">18sp</item>
         <item name="android:padding">12dp</item>
@@ -9,7 +9,7 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextViewResultRegular">
+    <style name="TextViewRegular">
         <item name="android:textColor">@color/gray</item>
         <item name="android:textSize">18sp</item>
         <item name="android:padding">12dp</item>

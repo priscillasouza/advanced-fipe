@@ -18,7 +18,7 @@
     <string name="text_hint_model_year_by_code">Ano modelo</string>
     <string name="text_hint_by_code_fipe">Código Fipe</string>
     <string name="text_app_bar_details">Detalhes</string>
-    <string name="text_references_month_details">Mês de referência:</string>
+    <string name="text_references_month_details">Mês referência:</string>
     <string name="text_code_fipe_details">Código Fipe:</string>
     <string name="text_brand_details">Marca:</string>
     <string name="text_model_details">Modelo:</string>
