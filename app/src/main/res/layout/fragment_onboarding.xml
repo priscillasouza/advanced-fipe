@@ -33,26 +33,11 @@
             android:id="@+id/image_view_onboarding"
             android:layout_width="@dimen/image_onboarding_width"
             android:layout_height="@dimen/image_onboarding_heigth"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="150dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/app_bar_onboarding"
-            app:srcCompat="@drawable/img_onboarding" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_view_name_app"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:text="@string/text_name_app_onboarding"
-            android:textColor="@color/primary_color"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_view_onboarding" />
+            app:srcCompat="@drawable/img_search" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_view_title_onboarding"
@@ -67,7 +52,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_view_name_app" />
+            app:layout_constraintTop_toBottomOf="@+id/image_view_onboarding" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_view_subtitle_onboarding"
