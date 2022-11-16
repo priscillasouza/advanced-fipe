@@ -78,4 +78,6 @@
     <string name="text_failure_unfavorite_item">Falha ao desfavoritar o item</string>
     <string name="text_unfavored_successfully">Desfavoritado com sucesso</string>
     <string name="text_advanced_fipe_splash">ADVANCED FIPE</string>
+    <string name="text_error_displaying_chart_data">Erro ao exibir os dados do gráfico</string>
+    <string name="text_price_bar_data_set">Preços</string>
 </resources>

@@ -70,12 +70,15 @@
     </fragment>
     <fragment
         android:id="@+id/graphicFragment"
-        android:name="com.advancedfipe.consult.presentation.GraphicFragment"
+        android:name="com.advancedfipe.graphic.presentation.GraphicFragment"
         android:label="GraphicFragment"
         tools:layout="@layout/fragment_graphic">
         <action
             android:id="@+id/action_graphicFragment_to_resultFragment"
             app:destination="@id/resultFragment" />
+        <argument
+            android:name="vehicle"
+            app:argType="com.advancedfipe.consult.domain.model.Vehicle"/>
     </fragment>
     <activity
         android:id="@+id/mainActivity"

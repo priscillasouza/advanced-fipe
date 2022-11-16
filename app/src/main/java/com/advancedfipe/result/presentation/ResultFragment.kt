@@ -112,7 +112,7 @@ class ResultFragment : Fragment() {
     private fun setClickButtonGraphic() {
         binding.buttonGraphic.setOnClickListener {
             findNavController().navigate(
-                ResultFragmentDirections.actionResultFragmentToGraphicFragment()
+                ResultFragmentDirections.actionResultFragmentToGraphicFragment(vehicle)
             )
         }
     }
