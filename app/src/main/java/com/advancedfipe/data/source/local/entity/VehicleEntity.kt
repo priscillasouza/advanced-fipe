@@ -1,11 +1,10 @@
 package com.advancedfipe.data.source.local.entity
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.PrimaryKey
 
-@Entity(tableName = "vehicle_table")
+@Entity(tableName = "vehicle_table", primaryKeys = ["fipeCode", "referenceMonth"])
 data class VehicleEntity(
-    @PrimaryKey(autoGenerate = false)
     val fipeCode: String,
     val price: String,
     val brand: String,
