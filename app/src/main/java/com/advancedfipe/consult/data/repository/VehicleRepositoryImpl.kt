@@ -111,6 +111,18 @@ class VehicleRepositoryImpl(
         }
     }
 
+    override suspend fun getVehicleById(fipeCode: String):Flow<List<Vehicle>>{
+        return flow {
+            vehicleDao?.getVehicleById(fipeCode).let { listVehicleEntity ->
+                listVehicleEntity?.let {
+                    vehicleEntityToModelMapper.transform(it)
+                } ?: throw Exception("VehicleDAO is null")
+            }.let {
+                emit(it)
+            }
+        }
+    }
+
     suspend fun getFavorites(): Flow<List<Vehicle>> {
         return flow {
             vehicleDao?.getFavorites().let { listVehicleEntity ->

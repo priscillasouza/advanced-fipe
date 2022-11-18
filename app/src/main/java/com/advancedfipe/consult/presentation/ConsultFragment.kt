@@ -24,12 +24,12 @@ class ConsultFragment : Fragment() {
 
     private lateinit var binding: FragmentConsultBinding
     private lateinit var consultViewModel: ConsultViewModel
-    private val navController by lazy { findNavController() }
-    private val args by navArgs<ConsultFragmentArgs>()
-    private val type by lazy { args.type }
     private var brandSelected: Brand? = null
     private var modelSelected: Model? = null
     private var modelYearSelected: ModelYear? = null
+    private val navController by lazy { findNavController() }
+    private val args by navArgs<ConsultFragmentArgs>()
+    private val type by lazy { args.type }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -71,7 +71,6 @@ class ConsultFragment : Fragment() {
                     brands
                 )
             }
-
             error.observe(viewLifecycleOwner) {
                 Toast.makeText(requireContext(),
                     getString(R.string.text_brand_list_failure),
@@ -95,7 +94,6 @@ class ConsultFragment : Fragment() {
                     models
                 )
             }
-
             error.observe(viewLifecycleOwner) {
                 Toast.makeText(requireContext(),
                     getString(R.string.text_fail_in_models_list),
